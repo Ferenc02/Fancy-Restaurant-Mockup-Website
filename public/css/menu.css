@@ -1,0 +1,97 @@
+h1 {
+  text-align: center;
+  color: var(--rise-n-shine);
+  font-weight: 100;
+  text-transform: capitalize;
+}
+.menu-container {
+  animation: fade-in 2s;
+  margin: auto;
+  background: var(--blue-nights);
+  width: 80vw;
+  height: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 38px rgba(0, 0, 0, 0.3), 0 1px 12px rgba(0, 0, 0, 0.22);
+}
+.menu-container h1 {
+  font-family: "Norican", cursive;
+  color: var(--rise-n-shine);
+}
+.content {
+  display: flex;
+  height: 100%;
+}
+.content h2 {
+  font-family: "Cinzel", serif;
+  color: var(--rise-n-shine);
+  letter-spacing: 0.1em;
+  font-weight: 100;
+  padding-top: 1rem;
+  word-break: break-all;
+}
+.left {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.box {
+  width: 50%;
+  height: 100%;
+  padding: 2rem;
+}
+
+/*food containers*/
+
+.food {
+  margin-top: 1rem;
+}
+
+.food-title {
+  font-family: "montserrat", sans-serif;
+  color: var(--lynx-white);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 1s;
+  word-break: break-all;
+}
+.food-title:hover {
+  cursor: default;
+  color: var(--nanohanacha-gold);
+}
+.food-description {
+  color: var(--hint-of-pensive);
+}
+
+/*Images*/
+.images {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.images img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  object-fit: cover;
+  transition: transform 250ms ease-in-out;
+}
+.images img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.section {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .menu-container {
+    width: 90vw;
+  }
+  .box {
+    padding: 1rem;
+  }
+}

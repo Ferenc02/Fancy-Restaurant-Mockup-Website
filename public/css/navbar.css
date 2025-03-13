@@ -1,0 +1,167 @@
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  position: absolute;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-family: "Norican", cursive;
+  color: var(--nanohanacha-gold);
+  left: 2rem;
+  top: 1rem;
+}
+.navbar-container {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.a-container {
+  animation: fade-in 2s forwards;
+}
+.a-container a {
+  text-decoration: none;
+  color: var(--lynx-white);
+  font-size: 1rem;
+  padding: 1rem;
+  transition: color 500ms;
+}
+.a-container a:not(.slogan) {
+  text-transform: uppercase;
+  font-size: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.a-container a:hover {
+  color: var(--rise-n-shine);
+}
+
+.a-container a.slogan {
+  font-family: "Norican", cursive;
+  color: var(--rise-n-shine);
+  font-size: 2rem;
+}
+.a-container .active {
+  color: var(--lynx-white);
+}
+
+.line {
+  animation: grow 2s forwards;
+  height: 2px;
+  background-color: var(--nanohanacha-gold);
+  margin-top: 1rem;
+}
+
+.hamburger-container {
+  position: absolute;
+  padding: 0.5rem;
+  display: flex;
+  right: 1rem;
+  top: 1.2rem;
+  align-items: center;
+  z-index: 2;
+  display: none;
+  cursor: pointer;
+}
+.navbar-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 47, 62, 0.95);
+  left: 0;
+  top: 0;
+  bottom: 0vw;
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s, height 1s;
+  z-index: 1;
+}
+.mobile-nav-container a {
+  text-decoration: none;
+  color: var(--hint-of-pensive);
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 500ms;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent; /*removes blue background on phone*/
+}
+.mobile-nav-container a:hover {
+  color: var(--nanohanacha-gold);
+}
+/*for ipad resolution*/
+@media screen and (max-width: 1000px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    left: 1rem;
+    top: 1.2rem;
+  }
+  .a-container a:not(.slogan) {
+    display: none;
+  }
+  .a-container a.slogan {
+    font-size: 1.2rem;
+  }
+  .line {
+    display: none;
+  }
+  .hamburger-container {
+    display: block;
+  }
+  .hamburger-container > img:nth-child(2) {
+    display: none;
+  }
+
+  /*This checks if user has clicked the hamburger icon*/
+
+  /*icon*/
+  #hamburger-input:checked + label {
+    z-index: 2;
+  }
+
+  /*navbar overlay*/
+  #hamburger-input:checked + label + .navbar-overlay {
+    height: 100vh;
+    opacity: 1;
+  }
+  /*HamburgerIcon yellow*/
+  #hamburger-input:checked + label > img:nth-child(1) {
+    display: none;
+  }
+  /*HamburgerIcon white*/
+  #hamburger-input:checked + label > img:nth-child(2) {
+    display: block;
+  }
+
+  #hamburger-input:checked + label + .navbar-overlay .mobile-nav-container a {
+    opacity: 1;
+  }
+
+  .mobile-nav-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 55rem;
+    opacity: 1;
+  }
+}

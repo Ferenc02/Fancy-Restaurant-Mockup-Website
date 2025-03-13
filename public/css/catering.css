@@ -1,0 +1,57 @@
+h1 {
+  text-align: center;
+  color: var(--rise-n-shine);
+  font-weight: 100;
+  text-transform: capitalize;
+}
+.catering-container {
+  margin: auto;
+  display: flex;
+  padding: 1rem;
+  padding-bottom: 0;
+  flex-flow: row wrap;
+  justify-content: center;
+  animation: fade-in 2s forwards;
+}
+.catering {
+  width: 20rem;
+  height: 20rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  transition: all 500ms;
+  box-shadow: 6px 6px 100px -23px rgba(0, 0, 0, 0.75);
+}
+
+.catering:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.catering img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  object-fit: cover;
+}
+.catering-title {
+  padding: 1rem;
+  width: 90%;
+  height: 20%;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--blue-nights);
+  background: rgb(220, 221, 225, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+@media screen and (max-width: 350px) {
+  /*This is for galaxy fold and iphone 5*/
+  .catering {
+    margin: 0.5rem;
+  }
+}
